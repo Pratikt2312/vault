@@ -17,6 +17,8 @@ apt-get update
 apt-get install -y --no-install-recommends build-essential \
   gcc-s390x-linux-gnu \
   crossbuild-essential-s390x \
+  gcc-ppc64le-linux-gnu \
+  crossbuild-essential-ppc64el \
   ca-certificates \
   curl \
   git
@@ -26,9 +28,13 @@ host_arch="${host_arch##*-}"
 case "$host_arch" in
   amd64)
     install crossbuild-essential-arm64 gcc-aarch64-linux-gnu
+    install crossbuild-essential-ppc64el gcc-ppc64le-linux-gnu
     ;;
   arm64)
     install gcc-x86-64-linux-gnu
+    ;;
+  ppc64el)
+    install crossbuild-essential-amd64 gcc-x86-64-linux-gnu 
     ;;
   *)
     echo "Building on $host_arch has not been implemented" 1>&2

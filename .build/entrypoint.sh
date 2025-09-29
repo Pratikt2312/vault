@@ -30,6 +30,9 @@ if [[ "$host_arch" != "$GOARCH" ]]; then
     s390x)
       export CC=s390x-linux-gnu-gcc
       ;;
+    ppc64le)
+      export CC=powerpc64le-linux-gnu-gcc
+      ;;
     *)
       fail "Building for $GOARCH has not been implemented"
       ;;
