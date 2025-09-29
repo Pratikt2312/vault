@@ -33,7 +33,7 @@ case "$host_arch" in
   arm64)
     install gcc-x86-64-linux-gnu
     ;;
-  ppc64el)
+  ppc64el|ppc64le)
     install crossbuild-essential-amd64 gcc-x86-64-linux-gnu 
     ;;
   *)
