@@ -86,7 +86,7 @@ runs:
       name: Download go modules
       shell: bash
       env:
-        GOPRIVATE: github.com/hashicorp/*
+        GOPRIVATE: github.com/Pratikt2312/*
       run: |
         git config --global url."https://${{ inputs.github-token }}@github.com".insteadOf https://github.com
         make go-mod-download
